@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   http://www.swordapp.org/. The Sword 2 specification can be found at: 
   http://sword-app.svn.sourceforge.net/viewvc/sword-app/spec/tags/sword-2.0/SWORDProfile.html?revision=377
 
-  This code lives at https://github.com/CottageLabs/sword2ruby.}
+  This code lives at https://github.com/swordapp/sword2ruby.}
 
   s.rubyforge_project = "sword2ruby"
 
