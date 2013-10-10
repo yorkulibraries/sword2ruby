@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sword2ruby (1.0.0)
+    sword2ruby (1.0.1)
       atom-tools (~> 2.0.5)
       hpricot (~> 0.8.3)
 
