@@ -199,6 +199,16 @@ module Sword2Ruby
     def self.find_elements_by_namespace(elements, namespace)
       elements.find_all {|e| e.namespace == namespace}
     end
+
+    #Method to return the first matching Atom::Elements found in an array of Atom::Elements by its namespace and name.
+    #===Parameters
+    #elements:: an array of Atom::Elements
+    #namespace:: the namespace to search for, e.g. "http://purl.org/dc/terms/"
+    #name:: the expanded name of the element(s) to search for
+    #It will return the first element found with a matching namespace and name, othewise nil.    
+    def self.find_element_by_namespace_and_name(elements, namespace, name)
+        elements.find {|e| e.namespace == namespace && e.fully_expanded_name == name}
+    end
     
   
     #Method to return an array of matching Atom::Elements found in an array of Atom::Elements by their namespace.
@@ -216,7 +226,7 @@ module Sword2Ruby
     #Returns an array of the form [filename, md5_digest, data]
     def self.read_file(filepath) 
       data = nil
-      File.open(filepath,'r') do |file|
+      File.open(filepath,'rb') do |file|
         data = file.gets(nil) #Read entire file, no Base64.encode64()
       end #file is closed automatically
       return [File.basename(filepath), Digest::MD5.hexdigest(data), data]
