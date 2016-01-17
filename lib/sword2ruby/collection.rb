@@ -239,6 +239,7 @@ module Sword2Ruby
       tmp << "Content-Type: #{options[:content_type]}\r\n"
       tmp << "Content-Disposition: attachment; name=payload; filename=#{filename}\r\n"
       tmp << "Content-MD5: #{md5}\r\n"
+      tmp << "Content-Transfer-Encoding: base64\r\n"
       tmp << "Packaging: #{options[:packaging]}\r\n" if options[:packaging]
       tmp << "MIME-Version: 1.0\r\n\r\n"
       
