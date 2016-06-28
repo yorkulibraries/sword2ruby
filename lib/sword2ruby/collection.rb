@@ -24,7 +24,7 @@ module Sword2Ruby
     #This method returns the string value of the <sword:collectionPolicy>[http://sword-app.svn.sourceforge.net/viewvc/sword-app/spec/tags/sword-2.0/SWORDProfile.html?revision=377#protocoloperations_retreivingservicedocument],
     #or nil if it is not defined in the service document.
     def sword_collection_policy
-      Utility.find_element_text(extensions, "sword:collectionPolicy")
+      Utility.find_element_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "collectionPolicy").text
     end
 
     #This method returns the boolean value of the <sword:mediation>[http://sword-app.svn.sourceforge.net/viewvc/sword-app/spec/tags/sword-2.0/SWORDProfile.html?revision=377#protocoloperations_retreivingservicedocument] tag,
@@ -36,19 +36,19 @@ module Sword2Ruby
     #This method returns the string value of the <sword:treatment>[http://sword-app.svn.sourceforge.net/viewvc/sword-app/spec/tags/sword-2.0/SWORDProfile.html?revision=377#protocoloperations_retreivingservicedocument] tag,
     #or nil if it is not defined in the service document.
     def sword_treatment
-      Utility.find_element_text(extensions, "sword:treatment")
+      Utility.find_element_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "treatment").text
     end
     
     #This method returns an array of the string values of the <sword:acceptPackaging>[http://sword-app.svn.sourceforge.net/viewvc/sword-app/spec/tags/sword-2.0/SWORDProfile.html?revision=377#protocoloperations_retreivingservicedocument] tags,
     #or an empty array [ ] if none are defined in the service document.
     def sword_accept_packagings
-      Utility.find_elements_text(extensions, "sword:acceptPackaging")
+      Utility.find_elements_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "acceptPackaging")
     end
 
     #This method returns an array of the string values of the <sword:service>[http://sword-app.svn.sourceforge.net/viewvc/sword-app/spec/tags/sword-2.0/SWORDProfile.html?revision=377#protocoloperations_retreivingservicedocument] tags,
     #or an empty array [ ] if none are defined in the service document.
     def sword_services
-      Utility.find_elements_text(extensions, "sword:service")
+      Utility.find_elements_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "service")
     end
 
     #This method returns the string value of the <app:accept>[http://sword-app.svn.sourceforge.net/viewvc/sword-app/spec/tags/sword-2.0/SWORDProfile.html?revision=377#protocoloperations_retreivingservicedocument] tag,

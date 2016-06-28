@@ -103,6 +103,16 @@ module Sword2Ruby
       elements.find(NIL_LAMBDA) {|e| e.fully_expanded_name == name}
     end
 
+    #Method to return the text value of first Atom::Elements found in an array of Atom::Elements by its namespace and name.
+    #===Parameters
+    #elements:: an array of Atom::Elements
+    #namespace:: the namespace to search for, e.g. "http://purl.org/dc/terms/"
+    #name:: the expanded name of the element(s) to search for
+    #It will return the first element found with a matching namespace and name, othewise nil.    
+    def self.find_element_by_namespace_and_name(elements, namespace, name)
+        elements.find {|e| e.namespace == namespace && e.fully_expanded_name == name}
+    end    
+
     #Method to return the text value of first Atom::Element found in an array of Atom::Elements by its name.
     #===Parameters
     #elements:: an array of Atom::Elements
@@ -181,6 +191,16 @@ module Sword2Ruby
       elements.find_all {|e| e.fully_expanded_name==name}.collect {|e| e.text}
     end
 
+    #Method to return an array of matching Atom::Elements found in an array of Atom::Elements by its namespace and name.
+    #===Parameters
+    #elements:: an array of Atom::Elements
+    #namespace:: the namespace to search for, e.g. "http://purl.org/dc/terms/"
+    #name:: the expanded name of the element(s) to search for
+    #It will return the first element found with a matching namespace and name, othewise nil.    
+    def self.find_elements_by_namespace_and_name(elements, namespace, name)
+        elements.find_all {|e| e.namespace == namespace && e.fully_expanded_name == name}.collect {|e| e.text}
+    end    
+
     #Method to return an array of attribute values of matching Atom::Elements found in an array of Atom::Elements by their name.
     #===Parameters
     #elements:: an array of Atom::Elements
@@ -199,17 +219,6 @@ module Sword2Ruby
     def self.find_elements_by_namespace(elements, namespace)
       elements.find_all {|e| e.namespace == namespace}
     end
-
-    #Method to return the first matching Atom::Elements found in an array of Atom::Elements by its namespace and name.
-    #===Parameters
-    #elements:: an array of Atom::Elements
-    #namespace:: the namespace to search for, e.g. "http://purl.org/dc/terms/"
-    #name:: the expanded name of the element(s) to search for
-    #It will return the first element found with a matching namespace and name, othewise nil.    
-    def self.find_element_by_namespace_and_name(elements, namespace, name)
-        elements.find {|e| e.namespace == namespace && e.fully_expanded_name == name}
-    end
-    
   
     #Method to return an array of matching Atom::Elements found in an array of Atom::Elements by their namespace.
     #===Parameters
