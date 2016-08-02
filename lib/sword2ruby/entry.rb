@@ -56,19 +56,19 @@ module Sword2Ruby
     #This method returns an array of string values for the <b>sword packagings</b>, from the <sword:packaging> tags (usually contained in the DepositReceipt Entry),
     #or an empty array [ ] if none are defined.
     def sword_packagings
-      Utility.find_elements_text(extensions, "sword:packaging")
+      Utility.find_element_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "packaging")
     end
     
     #This method returns the string value of the <b>sword treatment</b> <sword:treatment> tag (usually contained in the DepositReceipt Entry),
     #or nil if it is not defined.
     def sword_treatment
-      Utility.find_element_text(extensions, "sword:treatment")
+      Utility.find_element_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "treatment")
     end
 
     #This method returns the string value of the <b>sword verbose description</b> <sword:verboseDescription> tag (usually contained in the DepositReceipt Entry),
     #or nil if it is not defined.    
     def sword_verbose_description
-      Utility.find_element_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "verboseDescription").text
+      Utility.find_element_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "verboseDescription")
     end
 
     #This method returns an array of the Dublin Core elements (usually contained in the DepositReceipt Entry),

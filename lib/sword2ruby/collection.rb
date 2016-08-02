@@ -24,7 +24,7 @@ module Sword2Ruby
     #This method returns the string value of the <sword:collectionPolicy>[http://sword-app.svn.sourceforge.net/viewvc/sword-app/spec/tags/sword-2.0/SWORDProfile.html?revision=377#protocoloperations_retreivingservicedocument],
     #or nil if it is not defined in the service document.
     def sword_collection_policy
-      Utility.find_element_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "collectionPolicy").text
+      Utility.find_element_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "collectionPolicy")
     end
 
     #This method returns the boolean value of the <sword:mediation>[http://sword-app.svn.sourceforge.net/viewvc/sword-app/spec/tags/sword-2.0/SWORDProfile.html?revision=377#protocoloperations_retreivingservicedocument] tag,
@@ -36,7 +36,7 @@ module Sword2Ruby
     #This method returns the string value of the <sword:treatment>[http://sword-app.svn.sourceforge.net/viewvc/sword-app/spec/tags/sword-2.0/SWORDProfile.html?revision=377#protocoloperations_retreivingservicedocument] tag,
     #or nil if it is not defined in the service document.
     def sword_treatment
-      Utility.find_element_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "treatment").text
+      Utility.find_element_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "treatment")
     end
     
     #This method returns an array of the string values of the <sword:acceptPackaging>[http://sword-app.svn.sourceforge.net/viewvc/sword-app/spec/tags/sword-2.0/SWORDProfile.html?revision=377#protocoloperations_retreivingservicedocument] tags,

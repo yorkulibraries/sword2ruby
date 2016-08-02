@@ -110,7 +110,7 @@ module Sword2Ruby
     #name:: the expanded name of the element(s) to search for
     #It will return the first element found with a matching namespace and name, othewise nil.    
     def self.find_element_by_namespace_and_name(elements, namespace, name)
-        elements.find {|e| e.namespace == namespace && e.fully_expanded_name == name}
+        elements.find {|e| e.namespace == namespace && e.fully_expanded_name == name}.text rescue nil
     end    
 
     #Method to return the text value of first Atom::Element found in an array of Atom::Elements by its name.
