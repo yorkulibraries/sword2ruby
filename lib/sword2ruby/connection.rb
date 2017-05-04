@@ -33,5 +33,24 @@ module Sword2Ruby
       
     end #initialize
 
+    def get(url, headers = {})
+      headers.merge!({ 'On-Behalf-Of' => @user_credentials.on_behalf_of}) if @user_credentials.on_behalf_of
+      super(url, headers)
+    end
+
+    def post(url, body, headers = {})
+      headers.merge!({ 'On-Behalf-Of' => @user_credentials.on_behalf_of}) if @user_credentials.on_behalf_of
+      super(url, body, headers)
+    end
+
+    def put(url, body, headers = {})
+      headers.merge!({ 'On-Behalf-Of' => @user_credentials.on_behalf_of}) if @user_credentials.on_behalf_of
+      super(url, body, headers)
+    end    
+
+    def delete(url, body = nil, headers = {})
+      headers.merge!({ 'On-Behalf-Of' => @user_credentials.on_behalf_of}) if @user_credentials.on_behalf_of
+      super(url, body, headers)
+    end
   end  #class
 end #module

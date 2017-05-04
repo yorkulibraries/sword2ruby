@@ -48,7 +48,7 @@ module Sword2Ruby
      
       
       if res.is_a? Net::HTTPSuccess
-        res.validate_content_type(["application/atomsvc+xml"])
+        res.validate_content_type(["application/atomsvc+xml", "application/atomserv+xml"])
         
         service = self.class.parse(res.body, base, self)
 
