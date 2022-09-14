@@ -6,6 +6,10 @@ module Sword2Ruby
   #
   #Please see the {atom-tools documentation}[http://rdoc.info/github/bct/atom-tools/master/frames] for a complete list of attributes and methods.
   class ::Atom::Entry < ::Atom::Element
+    
+    def to_s
+      return "<?xml version='1.0' encoding='UTF-8'?>" + super.to_s
+    end
 
 #Deposit Receipt tags
     
