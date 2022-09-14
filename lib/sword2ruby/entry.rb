@@ -8,7 +8,7 @@ module Sword2Ruby
   class ::Atom::Entry < ::Atom::Element
     
     def to_s
-      return "<?xml version='1.0' encoding='UTF-8'?>" + super.to_s
+      return '<?xml version="1.0" encoding="UTF-8"?>' + super.to_s
     end
 
 #Deposit Receipt tags
