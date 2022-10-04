@@ -60,19 +60,19 @@ module Sword2Ruby
     #This method returns an array of string values for the <b>sword packagings</b>, from the <sword:packaging> tags (usually contained in the DepositReceipt Entry),
     #or an empty array [ ] if none are defined.
     def sword_packagings
-      Utility.find_elements_text(extensions, "sword:packaging")
+      Utility.find_element_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "packaging")
     end
     
     #This method returns the string value of the <b>sword treatment</b> <sword:treatment> tag (usually contained in the DepositReceipt Entry),
     #or nil if it is not defined.
     def sword_treatment
-      Utility.find_element_text(extensions, "sword:treatment")
+      Utility.find_element_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "treatment")
     end
 
     #This method returns the string value of the <b>sword verbose description</b> <sword:verboseDescription> tag (usually contained in the DepositReceipt Entry),
     #or nil if it is not defined.    
     def sword_verbose_description
-      Utility.find_element_text(extensions, "sword:verboseDescription")
+      Utility.find_element_by_namespace_and_name(extensions, "http://purl.org/net/sword/terms/", "verboseDescription")
     end
 
     #This method returns an array of the Dublin Core elements (usually contained in the DepositReceipt Entry),
@@ -81,6 +81,10 @@ module Sword2Ruby
     #For more information, see the {Dublin Core Metadata Terms specification}[http://dublincore.org/documents/dcmi-terms/].
     def dublin_core_extensions
       Utility.find_elements_by_namespace(extensions, "http://purl.org/dc/terms/")
+    end
+
+    def dublin_core_extension(name)
+      Utility.find_element_by_namespace_and_name(extensions, "http://purl.org/dc/terms/", name)
     end
 
     #This method adds a new Dublin Core element to the entry,

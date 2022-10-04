@@ -63,7 +63,7 @@ Now try and run the following statements to post a file to Sword and then update
 	require 'Sword2Ruby'
 
 	#Print out the version number
-	puts "Running Sword2Ruby version #{Sword2Ruby::Version}"
+	puts "Running Sword2Ruby version #{Sword2Ruby::VERSION}"
 
 	#Define the authentication credentials for the connection
 	sword_user = Sword2Ruby::User.new('sword', 'sword')
